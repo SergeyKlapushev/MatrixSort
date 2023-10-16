@@ -18,6 +18,18 @@ namespace MatrixSort
         {
             //дана матрица
             int[,] matrix = { { 7, 3, 2 }, { 4, 9, 6 }, { 1, 8, 5 } };
+            
+
+            Console.WriteLine("--Было--");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    Console.Write(matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
+
 
             // создаём одномерный массив
             int[] array = new int[matrix.GetLength(0) * matrix.GetLength(1)]; 
@@ -36,6 +48,8 @@ namespace MatrixSort
             //сортируем одномерный массив
             Array.Sort(array);
             indexArr = 0;
+            Console.WriteLine();
+            Console.WriteLine("--Стало--");
 
             //Перезаписываем значения матрицы, значениями из отсортированного одномерного массива
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -48,6 +62,7 @@ namespace MatrixSort
                 }
                 Console.WriteLine();
             }
+            Console.ReadLine();
         }
     }
 }
